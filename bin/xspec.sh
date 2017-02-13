@@ -225,7 +225,9 @@ fi
 ## files and dirs ############################################################
 ##
 
-TEST_DIR=$(dirname "$XSPEC")/xspec
+if [ $TEST_DIR = "" ]; then
+	TEST_DIR=$(dirname "$XSPEC")/xspec
+fi
 TARGET_FILE_NAME=$(basename "$XSPEC" | sed 's:\...*$::')
 
 if test -n "$XSLT"; then
